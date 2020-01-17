@@ -7,7 +7,7 @@ tar -cvf $tarfile \
        --exclude=sys \
        --exclude=mnt \
        --exclude=var/cache \
-       --exclude=usr/share/{perl5,fonts,groff,icons,X11,doc,info,themes,color,colord,locale} \
+       --exclude=usr/share/{perl5,include,fonts,groff,icons,X11,doc,info,themes,color,colord,locale} \
        --exclude=usr/src \
        --exclude=var/log \
        --exclude=*.sh \

@@ -8,7 +8,7 @@ mkdir /openEuler-1.0-1205-root
 rpm --root /openEuler-1.0-1205-root/ --initdb
 rpm --root /openEuler-1.0-1205-root/ -ivh /mnt/openEuler-1.0-1205-repo/Packages/openEuler-gpg-keys-1.0-2.2.aarch64.rpm
 rpm --root /openEuler-1.0-1205-root/ -ivh /mnt/openEuler-1.0-1205-repo/Packages/openEuler-repos-1.0-2.2.aarch64.rpm
-rpm --root /openEuler-1.0-1205-root/ -ivh /mnt/openEuler-1.0-1205-repo/Packages/openEuler-release-1.0-16.aarch64.rpm --force --nodeps
+#rpm --root /openEuler-1.0-1205-root/ -ivh /mnt/openEuler-1.0-1205-repo/Packages/openEuler-release-1.0-16.aarch64.rpm --force --nodeps
 #init yum repo
 #use the yum package from openEuler-1.0-aarch64-dvd.iso
 #this can make the image smaller
@@ -22,4 +22,7 @@ enabled=1
 gpgcheck=0
 EOF
 #install yum
-yum -y --installroot=/openEuler-1.0-1205-root/ install yum
+yum -y install bash yum vim --setopt=override_install_langs=en \
+                   --installroot=/openEuler-1.0-1205-root/ \
+		   --setopt=tsflags=nodocs \
+		   --setopt=install_weak_deps=false
